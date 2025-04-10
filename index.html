@@ -3,10 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather App 2.0</title>
   </head>
   <body>
-    <h1>hello world</h1>
+    <form>
+      <input type="text" id="city" placeholder="Enter a city..." required />
+      <button type="submit">See Weather</button>
+    </form>
+    <h1 id="currentCity">🌎 Myrtle Beach 🌍</h1>
+    <ul class="weatherNow" id="weatherNow">
+      <li class="now" id="currentDate">📆 2023-10-01</li>
+      <li class="now" id="currentTime">🕝12:00 PM</li>
+      <li class="now" id="currentTemp">Temperature 🌡️: 75°F</li>
+      <li class="now" id="currentHumidity">Humidity 💧: 60%</li>
+      <li class="now" id="currentConditions">Conditions ☀️: Sunny</li>
+    </ul>
+    <ul class="forecast" id="forecast">
+      <li class="day" id="day0">Day 0: 🌡️ 74°F, ☀️ Sunny</li>
+      <li class="day" id="day1">Day 1: 🌡️ 75°F, ☀️ Sunny</li>
+      <li class="day" id="day2">Day 2: 🌡️ 76°F, 🌤️ Partly Cloudy</li>
+      <li class="day" id="day3">Day 3: 🌡️ 77°F, ☁️ Cloudy</li>
+      <li class="day" id="day4">Day 4: 🌡️ 78°F, 🌦️ Rainy</li>
+    </ul>
     <footer>
       Built by
       <a href="https://www.linkedin.com/in/michelle-waite/">Michelle Waite</a>,
