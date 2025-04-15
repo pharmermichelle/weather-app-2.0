@@ -4,27 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App 2.0</title>
+    <link rel="stylesheet" href="src\style.css" />
   </head>
   <body>
-    <form>
+    <form id="search-form">
       <input type="text" id="city" placeholder="Enter a city..." required />
-      <button type="submit">See Weather</button>
+      <button type="submit" id="citySubmit">🔍 Weather</button>
     </form>
-    <h1 id="currentCity">🌎 Myrtle Beach 🌍</h1>
-    <ul class="weatherNow" id="weatherNow">
-      <li class="now" id="currentDate">📆 2023-10-01</li>
-      <li class="now" id="currentTime">🕝12:00 PM</li>
-      <li class="now" id="currentTemp">Temperature 🌡️: 75°F</li>
-      <li class="now" id="currentHumidity">Humidity 💧: 60%</li>
-      <li class="now" id="currentConditions">Conditions ☀️: Sunny</li>
-    </ul>
-    <ul class="forecast" id="forecast">
-      <li class="day" id="day0">Day 0: 🌡️ 74°F, ☀️ Sunny</li>
-      <li class="day" id="day1">Day 1: 🌡️ 75°F, ☀️ Sunny</li>
-      <li class="day" id="day2">Day 2: 🌡️ 76°F, 🌤️ Partly Cloudy</li>
-      <li class="day" id="day3">Day 3: 🌡️ 77°F, ☁️ Cloudy</li>
-      <li class="day" id="day4">Day 4: 🌡️ 78°F, 🌦️ Rainy</li>
-    </ul>
+    <div class="bodyContainer">
+      <h1 id="currentCity">🌎 Myrtle Beach 🌍</h1>
+      <div class="dateContainer">
+        <p class="now">
+          📆 <span id="currentDate">Monday, May 14</span> at
+          <span id="currentTime"> 12:00 PM </span>
+        </p>
+      </div>
+      <div class="weatherNow" id="nowContainer">
+        <p id="currentConditions">☀️ Sunny</p>
+        <p id="currentTemp">75°F</p>
+        <p id="currentHumidity">60% Humidity</p>
+      </div>
+
+      <ul class="forecast" id="forecast">
+        <li class="day" id="day0">
+          Day 0:<br />
+          🌡️ 74°F<br />
+          ☀️ Sunny
+        </li>
+        <li class="day" id="day1">
+          Day 1:<br />
+          🌡️ 75°F<br />
+          ☀️ Sunny
+        </li>
+        <li class="day" id="day2">
+          Day 2:<br />
+          🌡️ 76°F<br />
+          🌤️ Partly Cloudy
+        </li>
+        <li class="day" id="day3">
+          Day 3:<br />
+          🌡️ 77°F<br />
+          ☁️ Cloudy
+        </li>
+        <li class="day" id="day4">
+          Day 4:<br />
+          🌡️ 78°F<br />
+          🌦️ Rainy
+        </li>
+      </ul>
+    </div>
     <footer>
       Built by
       <a href="https://www.linkedin.com/in/michelle-waite/">Michelle Waite</a>,
@@ -33,5 +61,6 @@
       and hosted on
       <a href="https://wondrous-selkie-8cc803.netlify.app/">Netlify</a>
     </footer>
+    <script src="src\script.js"></script>
   </body>
 </html>
