@@ -39,7 +39,14 @@ function fetchWeather(cityName) {
     currentTemp.textContent = `${Math.round(
       response.data.temperature.current
     )}°C`;
+    currentFeelsLike.textContent = `Feels Like ${Math.round(
+      response.data.temperature.feels_like
+    )}°C`;
     currentHumidity.textContent = `${response.data.temperature.humidity}% Humidity`;
+    currentWind.textContent = `${Math.round(
+      response.data.wind.speed
+    )} km/h Wind`;
+    currentPressure.textContent = `${response.data.temperature.pressure} mbar`;
     currentIcon.src = `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`;
     currentIcon.alt = response.data.condition.description;
   });
@@ -49,20 +56,22 @@ function fetchWeather(cityName) {
       let forecastDay = forecastResponse.data.daily[i];
       let date = new Date(forecastDay.time * 1000);
       let weekday = date.toLocaleDateString(undefined, {
-        weekday: "short",
+        weekday: "long",
       });
 
       let dayElement = document.querySelector(`#day${i}`);
       let iconUrl = `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png`;
 
       dayElement.innerHTML = `
-        ${weekday}:<br />
-        <img src="${iconUrl}" alt="${
+  ${weekday}<br /><br /><strong>${Math.round(
+        forecastDay.temperature.minimum
+      )}°C</strong> → <strong>${Math.round(
+        forecastDay.temperature.maximum
+      )}°C</strong> <br /> ${toTitleCase(forecastDay.condition.description)}
+  <img src="${iconUrl}" alt="${
         forecastDay.condition.description
       }" style="width: 50px; height: 50px;" /><br />
-        🌡️ ${Math.round(forecastDay.temperature.maximum)}°C<br />
-        ${toTitleCase(forecastDay.condition.description)}
-      `;
+`;
     }
   });
 }
